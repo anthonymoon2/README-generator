@@ -67,9 +67,8 @@ function init() {
             ${response.testInstructions}`;
             
             writeToFile("README.md", data);
-            console.log("README File created successfully.");
         })
 }
 
-// Function call to initialize app
+// initialize app
 init();
