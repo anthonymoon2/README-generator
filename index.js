@@ -1,22 +1,23 @@
-// TODO: Include packages needed for this application
+// packages needed 
 import inquirer from "inquirer";
 import fs from 'fs';
 
-// TODO: Create an array of questions for user input
-const questions = [];
-questions.push("Enter the title of your project: ");
-questions.push("Enter the description of your project: ");
-questions.push("Enter the installation instructions for your project: ");
-questions.push("Enter the usage information of your project: ");
-questions.push("Enter contributing guidelines of your project: ");
-questions.push("Enter the test instructions of your project: ");
+// array of questions for user input
+const questions = [
+    "Enter the title of your project: ",
+    "Enter the description of your project: ",
+    "Enter the installation instructions for your project: ",
+    "Enter the usage information of your project: ",
+    "Enter contributing guidelines of your project: ",
+    "Enter the test instructions of your project: "
+];
 
-// TODO: Create a function to write README file
+// function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('success'));
 }
 
-// TODO: Create a function to initialize app
+// function to initialize app
 function init() {
     inquirer
         .prompt([
@@ -52,7 +53,18 @@ function init() {
             }
         ])
         .then((response)=> {
-            let data = `# ${response.projectTitle} \n ## Description \n ${response.projectDesc} \n ## Installation Instruction \n ${response.installInstructions} ## Usage Information \n ${response.usageInformation} \n ## Contributing Guidlines \n ${response.contributingGuidelines} \n ## Test Instructions \n ${response.testInstructions}`;
+            let data = 
+            `# ${response.projectTitle} \n 
+            ## Description \n 
+            ${response.projectDesc} \n 
+            ## Installation Instruction \n 
+            ${response.installInstructions} 
+            ## Usage Information \n 
+            ${response.usageInformation} \n 
+            ## Contributing Guidlines \n 
+            ${response.contributingGuidelines} \n 
+            ## Test Instructions \n 
+            ${response.testInstructions}`;
             
             writeToFile("README.md", data);
             console.log("README File created successfully.");
