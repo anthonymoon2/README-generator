@@ -9,7 +9,9 @@ const questions = [
     "Enter the installation instructions for your project: ",
     "Enter the usage information of your project: ",
     "Enter contributing guidelines of your project: ",
-    "Enter the test instructions of your project: "
+    "Enter the test instructions of your project: ",
+    "Enter your Github username: ",
+    "Enter your email address: "
 ];
 
 // function to write README file
@@ -50,6 +52,16 @@ function init() {
                 type: 'input',
                 name: 'testInstructions',
                 message: questions[5]
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: questions[6]
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: questions[7]
             }
         ])
         .then((response)=> {
@@ -64,7 +76,10 @@ ${response.usageInformation} \n
 ## Contributing Guidlines \n 
 ${response.contributingGuidelines} \n 
 ## Test Instructions \n 
-${response.testInstructions}`;
+${response.testInstructions} \n
+## Questions \n 
+Github: ${response.github} \n
+Email: ${response.email}`;
             
             writeToFile("README.md", data);
         })
