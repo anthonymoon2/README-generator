@@ -66,10 +66,17 @@ function init() {
         ])
         .then((response)=> {
             let data = 
-`# ${response.projectTitle} \n 
+`# ${response.projectTitle} \n
+## Table of Contents
+- [Description](#description)
+- [Installation Instructions](#installation-instructions)
+- [Usage Information](#usage-information)
+- [Contributing Guidelines](#contributing-guidelines)
+- [Test Instructions](#test-instructions)
+- [Questions](#questions)
 ## Description \n 
 ${response.projectDesc} \n 
-## Installation Instruction \n 
+## Installation Instructions \n 
 ${response.installInstructions} 
 ## Usage Information \n 
 ${response.usageInformation} \n 
