@@ -54,17 +54,17 @@ function init() {
         ])
         .then((response)=> {
             let data = 
-            `# ${response.projectTitle} \n 
-            ## Description \n 
-            ${response.projectDesc} \n 
-            ## Installation Instruction \n 
-            ${response.installInstructions} 
-            ## Usage Information \n 
-            ${response.usageInformation} \n 
-            ## Contributing Guidlines \n 
-            ${response.contributingGuidelines} \n 
-            ## Test Instructions \n 
-            ${response.testInstructions}`;
+`# ${response.projectTitle} \n 
+## Description \n 
+${response.projectDesc} \n 
+## Installation Instruction \n 
+${response.installInstructions} 
+## Usage Information \n 
+${response.usageInformation} \n 
+## Contributing Guidlines \n 
+${response.contributingGuidelines} \n 
+## Test Instructions \n 
+${response.testInstructions}`;
             
             writeToFile("README.md", data);
         })
